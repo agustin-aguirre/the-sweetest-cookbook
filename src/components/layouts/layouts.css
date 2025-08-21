@@ -1,0 +1,25 @@
+/* Grid Layout */
+.grid-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 0px;
+    margin: 0px;
+}
+
+/* Centered Landscape Layout */
+.centered-landscape-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Two-Column layout */
+.two-column-layout {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 5fr;
+    column-gap: 2rem;
+}
