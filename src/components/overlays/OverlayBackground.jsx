@@ -1,10 +1,14 @@
 import "./overlay-background.css";
 
 
-function OverlayBackground({colorStyles, children}) {
+function OverlayBackground(props) {
+    const newProps = {...props};
+    delete newProps.children;
+    delete newProps.className;
+    
     return (
-        <div className="overlay" style={colorStyles ?? {}}>
-            {children}
+        <div className={`overlay ${props.className}`} {...newProps}>
+            {props.children}
         </div>
     )
 }

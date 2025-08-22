@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Dessert } from "../models/dessert";
-import { getById } from "../services/api";
-import SquaredButton from "./buttons/SquaredButton";
-import OverlayBackground from "./overlays/OverlayBackground";
-import DessertDisplay from "./DessertDisplay";
-import EditDessertForm from "./EditDessertForm";
-
+import { Dessert } from "../../../models/dessert";
+import { getById } from "../../../services/api";
+import SquaredButton from "../../buttons/SquaredButton";
+import OverlayBackground from "../../overlays/OverlayBackground";
+import DessertDisplay from "../displays/DessertDisplay";
+import EditDessertForm from "../../EditDessertForm";
+import "./overlay.css";
 
 function ShowDessertOverlay({id, onEdit, onClose}) {
     const [isLoading, setIsLoading] = useState(true);
@@ -29,18 +29,12 @@ function ShowDessertOverlay({id, onEdit, onClose}) {
 
 
     return (
-        <OverlayBackground>
-            <div style={{display: "grid", gridTemplateColumns: "1fr 4fr 1fr"}}>
-                <div style={{gridColumn: 2}}>
-                    {renderDisplay()}
-                </div>
-                <div style={{display: "flex", flexDirection: "column", width: "80px"}}>
-                    <SquaredButton title="Cerrar" onClick={onClose} />
-                    {!isLoading && !isInEditMode && <SquaredButton title="Editar" onClick={() => setIsInEditMode(true)} />}
-                </div>
+        <OverlayBackground className="dessert-overlay">
+            <div className="display-container">
+                { renderDisplay() }
             </div>
         </OverlayBackground>
-    );
+    )
 }
 
 

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getAll } from "./services/api";
 import LoadingOverlay from "./components/overlays/LoadingOverlay";
 import DessertsShowcase from "./components/DessertsShowcase";
-import ShowDessertOverlay from "./components/ShowDessertOverlay";
+import ShowDessertOverlay from "./components/desserts/overlays/ShowDessertOverlay";
 import './App.css';
 import "./font-styles.css";
 

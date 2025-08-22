@@ -1,0 +1,23 @@
+.info-section {
+    background-color: #2C2C2C;
+    border-radius: 15px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.heading, .content {
+    background-color: #88304E;
+    border-radius: 10px;
+    color: white;
+}
+
+.heading {
+    font-family: "Cantata One", serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.content {
+}

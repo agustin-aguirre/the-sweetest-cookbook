@@ -1,5 +1,5 @@
 import axios from "axios";
-import {data} from "./cachedApiData";
+import { data } from "./cachedApiData";
 import { Dessert, DessertThumbnail } from "../models/dessert";
 
 export { getById, getAll }
@@ -8,6 +8,11 @@ export { getById, getAll }
 const API_URL = "https://www.themealdb.com/api/json/v1/1/";
 const FETCH_BY_ID_ENDPOINT = API_URL + "lookup.php?i=";
 const CATEGORIES_ENDPOINT = API_URL + "filter.php?c=Dessert";
+
+
+const wait = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 async function apiGet(endpoint, config) {
@@ -39,7 +44,12 @@ function zipIngredients(data){
 }
 
 async function getById(id) {
-    const result = await apiGet(FETCH_BY_ID_ENDPOINT + id);
+    const result = id == 53049
+        ? await (async () => {
+            await wait(50);
+            return { data: { meals: [data.details[53049]] }};
+        })()
+        : await apiGet(FETCH_BY_ID_ENDPOINT + id);
     const recipeData = result.data.meals[0];
     const dessert = new Dessert(
         recipeData.idMeal,
@@ -54,10 +64,7 @@ async function getById(id) {
 async function getAll() {
     // const result = await apiGet(CATEGORIES_ENDPOINT);
     // return result.data.meals;
-    const wait = (ms) => {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    await wait(2000);
-    const result = data.meals.map(dessert => (new DessertThumbnail(dessert.idMeal, dessert.strMeal, dessert.strMealThumb)));
+    await wait(50);
+    const result = data.catalog.map(dessert => (new DessertThumbnail(dessert.idMeal, dessert.strMeal, dessert.strMealThumb)));
     return result;
 }
