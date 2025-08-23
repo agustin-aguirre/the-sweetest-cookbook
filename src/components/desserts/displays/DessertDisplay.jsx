@@ -1,10 +1,9 @@
-import InfoArticle from "../../articles/InfoArticle";
 import ListArticle from "../../articles/ListArticle";
 import "./display.css";
 import "./layout.css";
 
 
-function DessertDisplay({dessert}) {
+function DessertDisplay({dessert, onClose, onEdit}) {
 
     const ingredients = dessert.ingredients.map((tuple) => 
         `${tuple.ingredient}${tuple.measure && `: ${tuple.measure}`}`
@@ -13,21 +12,35 @@ function DessertDisplay({dessert}) {
     const steps = dessert.steps.split(". ").map((sentence) => sentence + ".");
 
     return (
-        <div className="grid-layout">
-            <div className="grid-item-1 image-container">
-                <img className="image" src={dessert.imgUrl} alt="" />
+        <div className="desserts-display">
+            <div className="desserts-display-grid-item-1">
+                <div className="header-container">
+                    <div className="heading header">
+                        <h1>{dessert.name}</h1>
+                    </div>
+                    <div className="options-container">
+                        <button onClick={() => onEdit()}>Editar</button>
+                        <button onClick={() => onClose()}>Cerrar</button>
+                    </div>
+                </div>
             </div>
-            <InfoArticle className="grid-item-2">
-                <h1>{dessert.name}</h1>
-                <InfoArticle.Split />
-                <ListArticle
-                    heading="Ingredientes:" 
-                    items={ingredients}
-                    isOrdered={false}
-                />
-            </InfoArticle>
+            <ListArticle
+                className="desserts-display-grid-item-2"
+                heading="Ingredientes:" 
+                items={ingredients}
+                isOrdered={false}
+            />
+            <div className="desserts-display-grid-item-3" style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+            }}>
+                <div className="image-container">
+                    <img className="image" src={dessert.imgUrl} alt="" />
+                </div>
+            </div>
             <ListArticle 
-                className="grid-item-3"
+                className="desserts-display-grid-item-4"
                 heading="Preparación:"
                 items={steps}
                 isOrdered={true}

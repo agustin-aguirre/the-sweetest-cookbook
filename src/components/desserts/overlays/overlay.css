@@ -1,6 +1,7 @@
 .dessert-overlay {
     display: flex;
     justify-content: center;
+    overflow-y: hidden;
 }
 
 .display-container {

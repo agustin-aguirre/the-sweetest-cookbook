@@ -5,6 +5,8 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+    min-height: 200px;
+    max-height: fit-content;
 }
 
 .heading, .content {
@@ -17,7 +19,15 @@
     font-family: "Cantata One", serif;
     font-weight: normal;
     font-style: normal;
+    padding: 0px 25px;
 }
 
 .content {
+    padding: 5px 25px;
+}
+
+.content li {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
 }

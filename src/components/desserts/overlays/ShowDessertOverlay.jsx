@@ -24,7 +24,7 @@ function ShowDessertOverlay({id, onEdit, onClose}) {
     function renderDisplay() {
         if (isLoading) return <h2 style={{color: "white", fontSize: "xx-large"}}>Cargando...</h2>;
         if (isInEditMode) return <EditDessertForm dessert={dessert} onSubmit={(e) => {}}/>
-        return <DessertDisplay dessert={dessert} />;
+        return <DessertDisplay dessert={dessert} onEdit={onEdit} onClose={onClose}/>;
     }
 
 
