@@ -1,10 +1,10 @@
-import OverlayBackground from "./OverlayBackground";
+import OverlayBase from "./OverlayBase";
 
 
 function LoadingOverlay() {
-    return <OverlayBackground>
+    return <OverlayBase>
         <h1 style={{color: "white"}}>Cargando...</h1>
-    </OverlayBackground>
+    </OverlayBase>
 }
 
 

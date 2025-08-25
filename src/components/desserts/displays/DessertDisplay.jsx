@@ -30,12 +30,8 @@ function DessertDisplay({dessert, onClose, onEdit}) {
                 items={ingredients}
                 isOrdered={false}
             />
-            <div className="desserts-display-grid-item-3" style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center"
-            }}>
-                <div className="image-container">
+            <div className="desserts-display-grid-item-3 image-container">
+                <div className="image-border">
                     <img className="image" src={dessert.imgUrl} alt="" />
                 </div>
             </div>

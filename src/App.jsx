@@ -22,14 +22,31 @@ function App() {
         getItems();
     }, []);
 
+	useEffect(() => {
+		document.body.style.overflow = displayedDessert > 0 
+			? 'hidden'
+			: '';
+
+		return () => {
+			// Limpieza por si el componente se desmonta
+			document.body.style.overflow = '';
+		};
+	}, [displayedDessert]);
+
 	const dessertDisplayHooks = {
 		addRecipe: () => {alert("Adding recice")},
 		removeRecipe: (id) => {alert("Removing " + id)}
 	}
 
+	const blockScroll = () => {
+		return displayedDessert > 0
+			? { overflowY : "none" }
+			: { overflowY : "auto" }
+	}
+
 	return (
 		<>
-			<div className="desserts-display-container">
+			<div className="desserts-display-container" style={blockScroll()}>
 				<DessertsShowcase 
 				desserts={items} 
 				onAddDessert={dessertDisplayHooks.addRecipe}

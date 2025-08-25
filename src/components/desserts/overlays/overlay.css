@@ -1,9 +1,9 @@
 .dessert-overlay {
     display: flex;
     justify-content: center;
-    overflow-y: hidden;
 }
 
 .display-container {
     padding: 2rem 20px;
+    height: fit-content;
 }

@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
 import { Dessert } from "../../../models/dessert";
 import { getById } from "../../../services/api";
-import SquaredButton from "../../buttons/SquaredButton";
-import OverlayBackground from "../../overlays/OverlayBackground";
+import OverlayBase from "../../overlays/OverlayBase";
 import DessertDisplay from "../displays/DessertDisplay";
 import EditDessertForm from "../../EditDessertForm";
 import "./overlay.css";
@@ -29,11 +28,11 @@ function ShowDessertOverlay({id, onEdit, onClose}) {
 
 
     return (
-        <OverlayBackground className="dessert-overlay">
+        <OverlayBase className="dessert-overlay">
             <div className="display-container">
                 { renderDisplay() }
             </div>
-        </OverlayBackground>
+        </OverlayBase>
     )
 }
 
