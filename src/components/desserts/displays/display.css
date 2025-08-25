@@ -1,21 +1,5 @@
-.header-container {
-    display: flex;
-    column-gap: 20px;
-}
-
 .header {
     font-size: 1.1rem;
-    width: 100%;
-}
-
-.options-container {
-    display: flex;
-}
-
-.image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .image-border {
@@ -47,4 +31,3 @@
     cursor: pointer;
     transform: scale(1.05);
 }
-

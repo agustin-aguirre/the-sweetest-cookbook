@@ -19,7 +19,12 @@
     font-family: "Cantata One", serif;
     font-weight: normal;
     font-style: normal;
-    padding: 0px 25px;
+}
+
+.heading h1,
+.heading h2 {
+    margin: 0;
+    padding: 20px 25px;
 }
 
 .content {

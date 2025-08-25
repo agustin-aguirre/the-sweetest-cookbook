@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import { Dessert } from "../../../models/dessert";
 import { getById } from "../../../services/api";
 import OverlayBase from "../../overlays/OverlayBase";
-import DessertDisplay from "../displays/DessertDisplay";
-import EditDessertForm from "../../EditDessertForm";
+import DessertDetails from "../displays/DessertDetails";
+import EditDessertForm from "../displays/EditDessertForm";
 import "./overlay.css";
+
 
 function ShowDessertOverlay({id, onEdit, onClose}) {
     const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +23,8 @@ function ShowDessertOverlay({id, onEdit, onClose}) {
 
     function renderDisplay() {
         if (isLoading) return <h2 style={{color: "white", fontSize: "xx-large"}}>Cargando...</h2>;
-        if (isInEditMode) return <EditDessertForm dessert={dessert} onSubmit={(e) => {}}/>
-        return <DessertDisplay dessert={dessert} onEdit={onEdit} onClose={onClose}/>;
+        if (isInEditMode) return <EditDessertForm dessert={dessert} onEdit={() => setIsInEditMode(false)} onClose={onClose} onSubmit={(e) => {}}/>
+        return <DessertDetails dessert={dessert} onEdit={() => setIsInEditMode(true)} onClose={onClose}/>;
     }
 
 
