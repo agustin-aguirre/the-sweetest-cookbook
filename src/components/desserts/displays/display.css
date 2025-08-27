@@ -28,7 +28,7 @@
     box-shadow: 0px 0px 10px white;
     max-width: fit-content;
     max-height: fit-content;
-    transition: borrder-color 1s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: border-color 1s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .image-border:hover {
@@ -48,3 +48,42 @@
     transform: scale(1.05);
 }
 
+
+/* 🟡 Móviles grandes (≥576px) */
+@media (min-width: 576px) {
+  /* Estilos para móviles grandes */
+  .desserts-display {
+    width: 90dvw;
+  }
+}
+
+/* 🔵 Tablets (≥768px) */
+@media (min-width: 768px) {
+  /* Estilos para tablets */
+  .desserts-display {
+    width: 80dvw;
+  }
+}
+
+/* 🟠 Laptops (≥992px) */
+@media (min-width: 992px) {
+  /* Estilos para laptops */
+  .desserts-display {
+    width: 60dvw;
+  }
+}
+
+/* 🟣 Escritorios grandes (≥1200px) */
+@media (min-width: 1200px) {
+  .desserts-display {
+    width: 60dvw;
+  }
+}
+
+/* 🔴 Pantallas extra grandes (≥1400px) */
+@media (min-width: 1400px) {
+  /* Estilos para pantallas extra grandes */
+  .desserts-display {
+    width: 60dvw;
+  }
+}
