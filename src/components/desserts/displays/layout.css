@@ -1,5 +1,5 @@
 .desserts-display {
-    max-width: 60dvw;
+    width: 60dvw;
     display: grid;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(3, auto);

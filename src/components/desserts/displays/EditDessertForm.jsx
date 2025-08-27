@@ -17,8 +17,8 @@ function EditDessertForm({dessert, onEdit, onClose, onSubmit}) {
         }
     };
 
-//    <form action="" style={{width: "100%"}}>
     return (
+        <form action="" style={{width: "100%"}}>
             <BaseDessertDisplayLayout 
                 titleElem={
                     <div className="heading" style={{margin: 0, padding: "20px 25px"}}>
@@ -53,8 +53,8 @@ function EditDessertForm({dessert, onEdit, onClose, onSubmit}) {
                     </InfoArticle>
                 }
             />
+        </form>
         )
-        //</form>
 }
 
 
