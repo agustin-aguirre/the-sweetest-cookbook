@@ -1,36 +1,20 @@
-import React from "react";
+import ReadOnlyHeading from "../headings/ReadOnlyHeading";
 import "./articles.css";
 
 
-function InfoArticle(props) {
-    const childrenArray = React.Children.toArray(props.children);
-    
-    const splitIndex = childrenArray.findIndex(
-        child => React.isValidElement(child) && child.type === InfoArticle.Split
-    );
-
-    const [headingChilds, contentChilds] = 
-        splitIndex === -1
-            ? [childrenArray, []]
-            : [childrenArray.slice(0, splitIndex), childrenArray.slice(splitIndex + 1)];
-
-    const newProps = {...props};
-    delete newProps.children;
-    delete newProps.className;
-            
+function InfoArticle({title1, title2, title3, title4, title5, children}) {
     return (
-        <div className={"info-section " + (props.className || "")} {...newProps}>
-            <div className="heading">
-                {headingChilds}
-            </div>
-            <div className="content">
-                {contentChilds}
-            </div>
+        <div className="article">
+            <ReadOnlyHeading
+                title1={title1}
+                title2={title2}
+                title3={title3}
+                title4={title4}
+                title5={title5}
+            />
+            { children }
         </div>
     )
 }
-
-InfoArticle.Split = () => null;
-
 
 export default InfoArticle;

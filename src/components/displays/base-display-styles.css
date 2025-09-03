@@ -1,0 +1,45 @@
+.display-layout {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 15px;
+    width: 60dvw;
+    min-height: fit-content;
+    overflow-y: auto;
+}
+
+/* Móviles grandes (≥576px) */
+@media (min-width: 576px) {
+  .display-layout {
+    width: 90dvw;
+  }
+}
+
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+  .display-layout {
+    width: 80dvw;
+  }
+}
+
+/* Laptops (≥992px) */
+@media (min-width: 992px) {
+  /* Estilos para laptops */
+  .display-layout {
+    width: 60dvw;
+  }
+}
+
+/* Escritorios grandes (≥1200px) */
+@media (min-width: 1200px) {
+  .display-layout {
+    width: 60dvw;
+  }
+}
+
+/* Pantallas extra grandes (≥1400px) */
+@media (min-width: 1400px) {
+  /* Estilos para pantallas extra grandes */
+  .display-layout {
+    width: 60dvw;
+  }
+}

@@ -1,25 +1,25 @@
-import InfoArticle from "./InfoArticle";
+import ReadOnlyHeading from "../headings/ReadOnlyHeading";
+import ItemsList from "../lists/ItemsList";
+import OrderedList from "../lists/OrderedList";
 
 
-function ListArticle(props) {
-
-    const {heading, items, isOrdered} = props;
-
-    const ListTag = isOrdered ? "ol" : "ul";
-
-    const newProps = {...props};
-    delete newProps.heading;
-    delete newProps.items;
-    delete newProps.isOrdered;
+function ListArticle({title1, title2, title3, title4, title5, isOrdered, children}) {
 
     return (
-        <InfoArticle {...newProps}>
-            <h2>{heading}</h2>
-            <InfoArticle.Split />
-            <ListTag>
-                {items.map((item, index) => <li key={index}>{item}</li>)}
-            </ListTag>
-        </InfoArticle>
+        <div className="article">
+            <ReadOnlyHeading
+                title1={title1}
+                title2={title2}
+                title3={title3}
+                title4={title4}
+                title5={title5}
+            />
+            {
+                isOrdered
+                    ? <OrderedList>{children}</OrderedList>
+                    : <ItemsList>{children}</ItemsList>
+            }
+        </div>
     )
 }
 

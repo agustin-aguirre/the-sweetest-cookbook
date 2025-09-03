@@ -1,5 +1,5 @@
 import { useState } from "react";
-import BaseDessertDisplayLayout from "./BaseDessertDisplayLayout";
+import DisplayBase from "../../displays/DisplayBase";
 import InfoArticle from "../../articles/InfoArticle";
 import "../displays/display.css";
 
@@ -19,6 +19,16 @@ function EditDessertForm({dessert, onEdit, onClose, onSubmit}) {
 
     return (
         <form action="" style={{width: "100%"}}>
+
+        </form>
+        )
+}
+
+
+export default EditDessertForm;
+
+
+/*
             <BaseDessertDisplayLayout 
                 titleElem={
                     <div className="heading" style={{margin: 0, padding: "20px 25px"}}>
@@ -53,9 +63,4 @@ function EditDessertForm({dessert, onEdit, onClose, onSubmit}) {
                     </InfoArticle>
                 }
             />
-        </form>
-        )
-}
-
-
-export default EditDessertForm;
+*/

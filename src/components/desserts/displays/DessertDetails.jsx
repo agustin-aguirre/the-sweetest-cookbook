@@ -1,5 +1,6 @@
 import ListArticle from "../../articles/ListArticle";
-import BaseDessertDisplayLayout from "./BaseDessertDisplayLayout";
+import DisplayBase from "../../displays/DisplayBase";
+import ReadOnlyHeading from "../../headings/ReadOnlyHeading";
 import "./display.css";
 
 
@@ -12,34 +13,35 @@ function DessertDetails({dessert, onClose, onEdit}) {
     const steps = dessert.steps.split(". ").map((sentence) => sentence + ".");
 
     return (
-        <BaseDessertDisplayLayout 
-            titleElem={
-                <div className="heading">
-                    <h1 style={{margin: 0, padding: "20px 25px"}}>{dessert.name}</h1> 
-                </div>
-            }
-            gridElem2={
+        <DisplayBase>
+            <ReadOnlyHeading 
+                title1={"🍽️ " + dessert.name}
+                options={[
+                    { name: "Editar", onClick: () => onEdit(dessert) },
+                    { name: "Cerrar", onClick: () => onClose(dessert) }
+                ]}
+            />
+            <div style={{display: "grid", gridTemplateColumns: "2", gridTemplateRows: "1fr", columnGap: "15px"}}>
                 <ListArticle
-                    heading="Ingredientes:" 
-                    items={ingredients}
+                    title2="🛒 Ingredientes:" 
                     isOrdered={false}
-                />
-            }
-            imgElem={
-                <div className="image-border">
+                >
+                    {ingredients}
+                </ListArticle>
+                <div 
+                    style={{gridColumn: "2", maxWidth: "fit-content"}}
+                    className="image-border"
+                >
                     <img className="image" src={dessert.imgUrl} alt="" />
                 </div>
-            }
-            gridElem4={
-                <ListArticle 
-                    heading="Preparación:"
-                    items={steps}
-                    isOrdered={true}
-                />
-            }
-            onEdit={onEdit}
-            onClose={onClose}
-        />
+            </div>
+            <ListArticle 
+                title2="👨‍🍳 Preparación:"
+                isOrdered={true}
+            >
+                {steps}
+            </ListArticle>
+        </DisplayBase>
     );
 }
 

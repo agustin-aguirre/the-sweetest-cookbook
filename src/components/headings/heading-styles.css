@@ -1,0 +1,36 @@
+.heading-layout {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 2fr;
+    column-gap: 15px;
+}
+
+.heading-container {
+    grid-column: 1;
+    font-family: "Cantata One", serif;
+    font-style: normal;
+}
+
+.heading-container h1 {
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin: 5px;
+}
+
+.heading-container h2 {
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin: 0 5px;
+}
+
+
+.options-container {
+    grid-column: 2;
+    max-width: fit-content;
+}
+
+.option-button {
+    aspect-ratio: 1 / 1;
+    margin: 0;
+    padding: 0;
+}

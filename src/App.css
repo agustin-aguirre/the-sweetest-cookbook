@@ -1,3 +1,11 @@
 .desserts-display-container {
     padding: 16px;
 }
+
+.content-box {
+    margin: 0;
+    color: white;
+    background-color: #88304E;
+    border-radius: 10px;
+    padding: 20px;
+}

@@ -1,0 +1,38 @@
+.list {
+    font-size: larger;
+    list-style: none;
+    padding-left: 0px;
+    padding-right: 1.5ch;
+    margin-left: 0px;
+    margin-top: 5px;
+}
+
+.list li {
+    padding-bottom: .5lh;
+    display: flex;
+    align-items: flex-start;
+}
+
+.list li::before {
+    content: "•";
+    margin-right: 1.5ch;          /* espacio entre número y texto */
+    text-align: right;            /* alinea el número a la derecha del bloque */
+    flex-shrink: 0;
+    display: inline-block;
+    font-weight: bolder;
+    width: 3ch;
+}
+
+
+
+.ordered {
+    counter-reset: list;    /* inicializamos el contador */
+}
+
+.ordered li {
+    counter-increment: list;  /* incrementa el contador en cada li */
+}
+
+.ordered li::before {
+    content: counter(list) ".";  /* genera el número con punto */
+}
