@@ -25,6 +25,6 @@
 @media (min-width: 992px) {
   /* Estilos para laptops */
   .display-layout {
-    width: 50dvw;
+    width: 850px;
   }
 }
