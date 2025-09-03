@@ -43,7 +43,7 @@ function App() {
 			? { overflowY : "none" }
 			: { overflowY : "auto" }
 	}
-
+	
 	return (
 		<>
 			<div className="desserts-display-container" style={blockScroll()}>

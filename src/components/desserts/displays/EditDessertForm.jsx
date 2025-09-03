@@ -1,7 +1,7 @@
 import { useState } from "react";
 import DisplayBase from "../../displays/DisplayBase";
 import InfoArticle from "../../articles/InfoArticle";
-import "../displays/display.css";
+import "../displays/display-styles.css";
 
 
 function EditDessertForm({dessert, onEdit, onClose, onSubmit}) {

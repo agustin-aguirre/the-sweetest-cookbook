@@ -1,14 +1,12 @@
+import InfoArticle from "../../articles/InfoArticle";
 import ListArticle from "../../articles/ListArticle";
 import DisplayBase from "../../displays/DisplayBase";
 import ReadOnlyHeading from "../../headings/ReadOnlyHeading";
-import "./display.css";
+import IngredientsList from "../IngredientsList";
+import "./display-styles.css";
 
 
 function DessertDetails({dessert, onClose, onEdit}) {
-
-    const ingredients = dessert.ingredients.map((tuple) => 
-        `${tuple.ingredient}${tuple.measure && `: ${tuple.measure}`}`
-    );
 
     const steps = dessert.steps.split(". ").map((sentence) => sentence + ".");
 
@@ -22,12 +20,9 @@ function DessertDetails({dessert, onClose, onEdit}) {
                 ]}
             />
             <div style={{display: "grid", gridTemplateColumns: "2", gridTemplateRows: "1fr", columnGap: "15px"}}>
-                <ListArticle
-                    title2="🛒 Ingredientes:" 
-                    isOrdered={false}
-                >
-                    {ingredients}
-                </ListArticle>
+                <InfoArticle title2="🛒 Ingredientes:" >
+                    <IngredientsList ingredients={dessert.ingredients}/>
+                </InfoArticle>
                 <div 
                     style={{gridColumn: "2", maxWidth: "fit-content"}}
                     className="image-border"
@@ -35,10 +30,7 @@ function DessertDetails({dessert, onClose, onEdit}) {
                     <img className="image" src={dessert.imgUrl} alt="" />
                 </div>
             </div>
-            <ListArticle 
-                title2="👨‍🍳 Preparación:"
-                isOrdered={true}
-            >
+            <ListArticle title2="👨‍🍳 Preparación:" isOrdered={true} >
                 {steps}
             </ListArticle>
         </DisplayBase>

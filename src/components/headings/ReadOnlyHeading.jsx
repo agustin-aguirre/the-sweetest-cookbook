@@ -20,12 +20,13 @@ function ReadOnlyHeading({title1, title2, title3, title4, title5, options}) {
                 { title5 && <h5>{title5}</h5> }
             </div>
             <div className="options-container">
-                {options && options.map(option => (
+                {options && options.map(({name, onClick}, index) => (
                     <button 
+                        key={index}
                         className="option-button"
-                        onClick={option.onClick}
+                        onClick={onClick}
                     >
-                        {option.name}
+                        {name}
                     </button>
                 ))}
             </div>

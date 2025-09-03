@@ -2,7 +2,7 @@
     display: grid;
     grid-auto-flow: row;
     gap: 15px;
-    width: 60dvw;
+    width: 50dvw;
     min-height: fit-content;
     overflow-y: auto;
 }
@@ -25,14 +25,14 @@
 @media (min-width: 992px) {
   /* Estilos para laptops */
   .display-layout {
-    width: 60dvw;
+    width: 50dvw;
   }
 }
 
 /* Escritorios grandes (≥1200px) */
 @media (min-width: 1200px) {
   .display-layout {
-    width: 60dvw;
+    width: 50dvw;
   }
 }
 
@@ -40,6 +40,6 @@
 @media (min-width: 1400px) {
   /* Estilos para pantallas extra grandes */
   .display-layout {
-    width: 60dvw;
+    width: 50dvw;
   }
 }
