@@ -10,6 +10,17 @@ function DessertDetails({dessert, onClose, onEdit}) {
 
     const steps = dessert.steps.split(". ").map((sentence) => sentence + ".");
 
+    const row2Layout = {
+        display: "grid", 
+        gridTemplateColumns: "2fr",
+        gridAutoFlow: "column",
+        columnGap: "15px"
+    }
+
+    const imgContainerStyle = {
+        maxWidth: "100%"
+    }
+
     return (
         <DisplayBase>
             <ReadOnlyHeading 
@@ -19,14 +30,11 @@ function DessertDetails({dessert, onClose, onEdit}) {
                     { name: "Cerrar", onClick: () => onClose(dessert) }
                 ]}
             />
-            <div style={{display: "grid", gridTemplateColumns: "2", gridTemplateRows: "1fr", columnGap: "15px"}}>
+            <div style={row2Layout}>
                 <InfoArticle title2="🛒 Ingredientes:" >
                     <IngredientsList ingredients={dessert.ingredients}/>
                 </InfoArticle>
-                <div 
-                    style={{gridColumn: "2", maxWidth: "fit-content"}}
-                    className="image-border"
-                >
+                <div className="image-border" style={imgContainerStyle}>
                     <img className="image" src={dessert.imgUrl} alt="" />
                 </div>
             </div>

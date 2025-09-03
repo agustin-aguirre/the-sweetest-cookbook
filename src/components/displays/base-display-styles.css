@@ -8,7 +8,7 @@
 }
 
 /* Móviles grandes (≥576px) */
-@media (min-width: 576px) {
+@media (min-width: 0px) {
   .display-layout {
     width: 90dvw;
   }
@@ -24,21 +24,6 @@
 /* Laptops (≥992px) */
 @media (min-width: 992px) {
   /* Estilos para laptops */
-  .display-layout {
-    width: 50dvw;
-  }
-}
-
-/* Escritorios grandes (≥1200px) */
-@media (min-width: 1200px) {
-  .display-layout {
-    width: 50dvw;
-  }
-}
-
-/* Pantallas extra grandes (≥1400px) */
-@media (min-width: 1400px) {
-  /* Estilos para pantallas extra grandes */
   .display-layout {
     width: 50dvw;
   }
