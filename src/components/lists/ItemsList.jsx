@@ -1,15 +1,19 @@
 import "./list-styles.css";
 
 
-function ItemsList({bulletPoints, children}) {
+function ItemsList({prefix, children}) {
 
-    const listStyleClassname = bulletPoints ?? false ? "bullet-points" : ""
+    if (!prefix || prefix == "") {
+        prefix = "";
+    }
 
+    const ulStyle = prefix == "" ? "unstyled" : "unordered";
+    
     return (
         <div className="content-box">
-            <ul className={`list ${listStyleClassname}`}>
+            <ul className={"list " + ulStyle}>
                 {children && children.map((child, index) => (
-                    <li key={index}>{child}</li>
+                    <li list-prefix={prefix} key={index}>{child}</li>
                 ))}
             </ul>
         </div>

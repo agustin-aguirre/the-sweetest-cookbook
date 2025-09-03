@@ -8,21 +8,34 @@
 .list li {
     padding-bottom: .5lh;
     display: flex;
-    align-items: flex-start;
+    align-items: start;
 }
 
-.bullet-points li::before {
-    content: "•";
-    margin-right: 1.5ch;          /* espacio entre número y texto */
+.unstyled {
+    padding: 0px 15px;
+}
+
+.ordered, .unordered {
+    padding-right: 20px;
+}
+
+.ordered li::before,
+.unordered li::before {
+    margin-right: 1ch;
     width: 3ch;
     text-align: right;            /* alinea el número a la derecha del bloque */
+    align-self: flex-start;
     flex-shrink: 0;
     display: inline-block;
     font-weight: bolder;
     padding-left: 0px;
-    padding-right: 1.5ch;
     margin-left: 0px;
     margin-top: 5px;
+}
+
+
+.unordered li::before {
+    content: attr(list-prefix);
 }
 
 .ordered {
@@ -35,4 +48,6 @@
 
 .ordered li::before {
     content: counter(list) ".";  /* genera el número con punto */
+    padding-right: 0ch;
+    margin-right: 1.25ch;
 }
