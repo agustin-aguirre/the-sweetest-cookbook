@@ -21,16 +21,15 @@
 
 .ordered li::before,
 .unordered li::before {
-    margin-right: 1ch;
     width: 3ch;
+    margin-left: 0px;
+    margin-right: 1ch;
+    padding-left: 0px;
     text-align: right;            /* alinea el número a la derecha del bloque */
     align-self: flex-start;
     flex-shrink: 0;
     display: inline-block;
     font-weight: bolder;
-    padding-left: 0px;
-    margin-left: 0px;
-    margin-top: 5px;
 }
 
 
