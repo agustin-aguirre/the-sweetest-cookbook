@@ -2,7 +2,8 @@ import { motion } from "motion/react";
 import ListArticle from "../../articles/ListArticle";
 import DisplayBase from "../../displays/DisplayBase";
 import ReadOnlyHeading from "../../headings/ReadOnlyHeading";
-import MiddleRow from "../MiddleRow";
+import InfoArticle from "../../articles/InfoArticle";
+import IngredientsList from "../IngredientsList";
 import "./display-styles.css";
 
 
@@ -25,7 +26,16 @@ function DessertDetails({dessert, onClose, onEdit}) {
                         { name: "Cerrar", onClick: () => onClose(dessert) }
                     ]}
                 />
-                <MiddleRow dessert={dessert}/>
+                <div className="middle-row-container">
+                    <InfoArticle title2="🛒 Ingredientes:" >
+                        <IngredientsList ingredients={dessert.ingredients}/>
+                    </InfoArticle>
+                    <div className="image-container">
+                        <div className="image-border">
+                            <img className="image" src={dessert.imgUrl} alt="" />
+                        </div>
+                    </div>
+                </div>
                 <ListArticle title2="👨‍🍳 Preparación:" isOrdered={true} >
                     {steps}
                 </ListArticle>

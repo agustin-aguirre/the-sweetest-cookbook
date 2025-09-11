@@ -10,6 +10,7 @@ const FETCH_BY_ID_ENDPOINT = API_URL + "lookup.php?i=";
 const CATEGORIES_ENDPOINT = API_URL + "filter.php?c=Dessert";
 
 
+const SIMULATION_WAIT = 1000;
 const wait = (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -46,7 +47,7 @@ function zipIngredients(data){
 async function getById(id) {
     const result = id == 53049
         ? await (async () => {
-            await wait(50);
+            await wait(SIMULATION_WAIT);
             return { data: { meals: [data.details[53049]] }};
         })()
         : await apiGet(FETCH_BY_ID_ENDPOINT + id);
@@ -64,7 +65,7 @@ async function getById(id) {
 async function getAll() {
     // const result = await apiGet(CATEGORIES_ENDPOINT);
     // return result.data.meals;
-    await wait(50);
+    await wait(SIMULATION_WAIT);
     const result = data.catalog.map(dessert => (new DessertThumbnail(dessert.idMeal, dessert.strMeal, dessert.strMealThumb)));
     return result;
 }
