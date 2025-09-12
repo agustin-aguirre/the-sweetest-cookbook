@@ -1,9 +1,12 @@
+import { useState } from "react";
 import DotsButton from "../buttons/DotsButton";
-import CloseButton from "../buttons/CloseButton";
+import Dropdown from "../menus/Drowpdown";
 import "./heading-styles.css";
 
 
 function ReadOnlyHeading({title1, title2, title3, title4, title5, options}) {
+
+    const [isOpen, setIsOpen] = useState(false);
 
     const gridConfig = !options 
             ? {
@@ -23,7 +26,8 @@ function ReadOnlyHeading({title1, title2, title3, title4, title5, options}) {
                     { title5 && <h5>{title5}</h5> }
                 </div>
                 <div>
-                    <DotsButton onClick={() => alert("menu")}/>
+                    <DotsButton onClick={() => setIsOpen(!isOpen)}/>
+                    { isOpen && <Dropdown /> }
                 </div>
             </div>
             <div className="options-container">
