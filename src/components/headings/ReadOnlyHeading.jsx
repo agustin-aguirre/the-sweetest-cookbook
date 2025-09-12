@@ -1,3 +1,5 @@
+import DotsButton from "../buttons/DotsButton";
+import CloseButton from "../buttons/CloseButton";
 import "./heading-styles.css";
 
 
@@ -13,14 +15,19 @@ function ReadOnlyHeading({title1, title2, title3, title4, title5, options}) {
     return (
         <div className="heading-layout" style={gridConfig}>
             <div className="content-box heading-container">
-                { title1 && <h1>{title1}</h1> }
-                { title2 && <h2>{title2}</h2> }
-                { title3 && <h3>{title3}</h3> }
-                { title4 && <h4>{title4}</h4> }
-                { title5 && <h5>{title5}</h5> }
+                <div>
+                    { title1 && <h1>{title1}</h1> }
+                    { title2 && <h2>{title2}</h2> }
+                    { title3 && <h3>{title3}</h3> }
+                    { title4 && <h4>{title4}</h4> }
+                    { title5 && <h5>{title5}</h5> }
+                </div>
+                <div>
+                    <DotsButton onClick={() => alert("menu")}/>
+                </div>
             </div>
             <div className="options-container">
-                { options && options.map(({name, onClick}, index) => (
+                {/* { options && options.map(({name, onClick}, index) => (
                     <button 
                         key={index}
                         className="option-button"
@@ -28,7 +35,7 @@ function ReadOnlyHeading({title1, title2, title3, title4, title5, options}) {
                     >
                         {name}
                     </button>
-                ))}
+                ))} */}
             </div>
         </div>
     );

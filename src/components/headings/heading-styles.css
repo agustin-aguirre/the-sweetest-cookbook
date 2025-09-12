@@ -9,6 +9,8 @@
     grid-column: 1;
     font-family: "Cantata One", serif;
     font-style: normal;
+    display: flex;
+    justify-content: space-between;
 }
 
 .heading-container h1 {
@@ -23,6 +25,15 @@
     margin: 0 5px;
 }
 
+.menu-dots-button-container {
+    aspect-ratio: 1 / 1;
+    max-height: 5px;
+    width: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0;
+}
 
 .options-container {
     grid-column: 2;

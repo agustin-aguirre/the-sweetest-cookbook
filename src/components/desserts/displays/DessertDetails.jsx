@@ -4,6 +4,7 @@ import DisplayBase from "../../displays/DisplayBase";
 import ReadOnlyHeading from "../../headings/ReadOnlyHeading";
 import InfoArticle from "../../articles/InfoArticle";
 import IngredientsList from "../IngredientsList";
+import CloseButton from "../../buttons/CloseButton";
 import "./display-styles.css";
 
 
@@ -19,13 +20,17 @@ function DessertDetails({dessert, onClose, onEdit}) {
             transition={{ duration: 0.19, ease: "easeOut" }}
         >
             <DisplayBase>
-                <ReadOnlyHeading 
-                    title1={"🍽️ " + dessert.name}
-                    options={[
-                        { name: "Editar", onClick: () => onEdit(dessert) },
-                        { name: "Cerrar", onClick: () => onClose(dessert) }
-                    ]}
-                />
+                <div style={{display: "grid", gridTemplateColumns: "1fr auto", gridAutoFlow: "column"}}>
+                    <ReadOnlyHeading 
+                        title1={"🍽️ " + dessert.name}
+                        options={[
+                            { name: "Cerrar", onClick: () => onClose(dessert) }
+                        ]}
+                    />
+                    <div style={{width: "45px", height: "45px"}}>
+                        <CloseButton onClick={onClose}/>
+                    </div>
+                </div>
                 <div className="middle-row-container">
                     <InfoArticle title2="🛒 Ingredientes:" >
                         <IngredientsList ingredients={dessert.ingredients}/>
